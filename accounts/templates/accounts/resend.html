@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Resend verification link - .communicatio{% endblock %}
+{% block content %}
+<h1>Resend verification link</h1>
+{% if sent %}
+<p>If an account with this address exists and is not verified yet, we have sent a new link. If it is already verified, you can just log in.</p>
+{% elif wait %}
+<p>Please wait 60 seconds before requesting another link.</p>
+{% endif %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Send link</button>
+</form>
+{% endblock %}

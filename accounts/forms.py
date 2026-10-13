@@ -38,3 +38,10 @@ class RegistrationForm(forms.Form):
             self.cleaned_data["nickname"],
             self.cleaned_data["password1"],
         )
+
+
+class ResendForm(forms.Form):
+    email = forms.EmailField()
+
+    def clean_email(self):
+        return self.cleaned_data["email"].strip().lower()

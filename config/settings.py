@@ -132,3 +132,6 @@ MAILERS = {
         "BACKEND": "django.core.mail.backends.console.EmailBackend",
     },
 }
+
+# Login page is implemented in #5; verification pages link to it.
+LOGIN_URL = "/login/"

@@ -1,0 +1,7 @@
+Hi {{ user.nickname }},
+
+Confirm your email address for .communicatio by opening this link:
+
+{{ link }}
+
+The link is valid for {{ days }} days. If you did not register, ignore this email.

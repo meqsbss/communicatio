@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Email verified - .communicatio{% endblock %}
+{% block content %}
+{% if already %}
+<h1>Already verified</h1>
+<p>Your email address is already verified.</p>
+{% else %}
+<h1>Email verified</h1>
+<p>Thank you, your email address is now verified.</p>
+{% endif %}
+<p><a href="{{ login_url }}">Log in</a></p>
+{% endblock %}

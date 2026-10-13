@@ -2,5 +2,6 @@
 {% block title %}Check your email - .communicatio{% endblock %}
 {% block content %}
 <h1>Check your email</h1>
-<p>Your account has been created. We will send you a verification email.</p>
+<p>Your account has been created. We have sent you a verification email.</p>
+<p>Did not get it? <a href="{% url 'resend_verification' %}">Resend the link</a>.</p>
 {% endblock %}
