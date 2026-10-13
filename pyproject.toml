@@ -20,4 +20,4 @@ pythonpath = ["."]
 testpaths = ["tests"]
 
 [tool.ruff]
-extend-exclude = [".venv"]
+extend-exclude = [".venv", "*/migrations"]

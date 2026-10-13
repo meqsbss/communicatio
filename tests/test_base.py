@@ -49,14 +49,13 @@ def test_htmx_pinned_local_file_and_element(client):
     assert response.content == b"HTMX works"
 
 
-def test_nav_only_home_when_no_auth_urls(client):
+def test_nav_only_home_when_no_login_url(client):
     html = client.get("/").content.decode()
     nav = re.search(r"<nav.*?</nav>", html, re.DOTALL).group(0)
     assert ">Home</a>" in nav
     assert "Register" not in nav and "Log in" not in nav
-    for name in ("register", "login"):
-        with pytest.raises(NoReverseMatch):
-            reverse(name)
+    with pytest.raises(NoReverseMatch):
+        reverse("login")
 
 
 def test_css_single_file_responsive_no_framework():

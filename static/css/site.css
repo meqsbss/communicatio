@@ -28,3 +28,5 @@ img, video, table { max-width: 100%; }
   .site-nav { display: block; width: auto; }
   .site-nav ul { flex-direction: row; margin: 0; gap: 1.5rem; }
 }
+
+.field-error { display: block; color: #d93025; font-size: 0.9em; }
