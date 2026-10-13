@@ -6,7 +6,7 @@
 - `uv run pytest` - the whole suite
 - `uv run pytest tests/test_home.py` - one test file
 - `uv run ruff check .` - lint
-- `uv run python manage.py runserver` - local server
+- `uv run python manage.py runserver` - local server; it defaults `DJANGO_DEBUG=1` so `/static/` is served (set `DJANGO_DEBUG=0` to override; wsgi/asgi never default it)
 
 ## Rules
 

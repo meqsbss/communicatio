@@ -8,6 +8,11 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+    # Local dev server only: default DEBUG on so runserver serves /static/.
+    # Production runs through wsgi/asgi, never manage.py, so it stays off;
+    # an explicit DJANGO_DEBUG (e.g. 0) always wins.
+    if len(sys.argv) > 1 and sys.argv[1] == "runserver":
+        os.environ.setdefault("DJANGO_DEBUG", "1")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
