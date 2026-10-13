@@ -1,0 +1,23 @@
+[project]
+name = "communicatio"
+version = "0.1.0"
+description = "communicatio"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-django>=4.9",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+extend-exclude = [".venv"]
