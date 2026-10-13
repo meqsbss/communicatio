@@ -1,10 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>.communicatio</title>
-</head>
-<body>
-  <h1>.communicatio</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>.communicatio</h1>
+<p>
+  <button type="button" hx-get="{% url 'htmx_ping' %}" hx-target="#htmx-result" hx-swap="innerHTML">Test HTMX</button>
+  <span id="htmx-result"></span>
+</p>
+{% endblock %}
